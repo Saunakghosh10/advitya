@@ -22,7 +22,7 @@
 //   pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
 // });
 
-// // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+// // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
 // ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
 // // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
@@ -45,32 +45,65 @@
 // });
 
 // Assuming your cards have the class 'card-inner'
-const cards = document.querySelectorAll('.card-inner');
+const cards = document.querySelectorAll(".card-inner");
 
 // Function to handle the click event
 function toggleCardFlip() {
-  this.classList.toggle('is-flipped');
+  this.classList.toggle("is-flipped");
 }
 
 // Add click event listener to each card
 cards.forEach(function (card) {
-  card.addEventListener('click', toggleCardFlip);
+  card.addEventListener("click", toggleCardFlip);
 });
 
 // locomotive js
 
 const scroll = new LocomotiveScroll({
-  el: document.querySelector('.main'),
-  smooth: true
+  el: document.querySelector(".main"),
+  smooth: true,
 });
 
-// mouse Follower 
+// mouse Follower
 
 function mouseFollower() {
   window.addEventListener("mousemove", (dets) => {
     // console.log(dets.clientX)
-    document.querySelector(".cursor").style.transform = `translate(${dets.clientX}px, ${dets.clientY}px)`
-  })
+    document.querySelector(
+      ".cursor"
+    ).style.transform = `translate(${dets.clientX}px, ${dets.clientY}px)`;
+  });
 }
 
-mouseFollower()
+function text() {
+  var tl = gsap.timeline();
+  // tl.to(".bounding-elem2", {
+  //   y: 0,
+  //   ease:  Expo.easeInOut,
+  //   duration: 2,
+  //   stagger: .2
+  // });
+  tl.to(".bounding-elem1", {
+    y: 0,
+    ease: Expo.easeInOut,
+    duration: 2,
+    stagger: 0.2,
+    color: "black",
+  });
+}
+
+const cardsDesc = document.querySelectorAll(".card-desc-p");
+
+function toggleCard(card) {
+  card.classList.toggle('expanded');
+}
+
+cardsDesc.forEach(function(card) {
+  card.addEventListener('click', function() {
+    toggleCard(card);
+  });
+});
+
+text();
+
+mouseFollower();
