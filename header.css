@@ -135,7 +135,6 @@ nav h4 {
   color: white;
 }
 
-
 #page3-top h2 {
   font-size: 4vw;
   font-weight: 500;
@@ -296,13 +295,11 @@ ul li:hover ~ .cursor {
   box-shadow: 0 0 0 100vh #fff;
 } */
 
-
-
-.wrapper .title{
+.wrapper .title {
   text-align: center;
 }
 
-.title h4{
+.title h4 {
   display: inline-block;
   padding: 20px;
   color: #585757;
@@ -318,7 +315,7 @@ ul li:hover ~ .cursor {
   word-wrap: break-word;
 }
 
-.wrapper .card_Container{
+.wrapper .card_Container {
   position: relative;
   display: flex;
   justify-content: center;
@@ -327,26 +324,27 @@ ul li:hover ~ .cursor {
   margin: 40px 0;
 }
 
-.card_Container .card{
+.card_Container .card {
   position: relative;
   width: 300px;
   height: 400px;
   margin: 20px;
   overflow: hidden;
   box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 1),
-              inset 0 0 0 1000px rgba(67, 52, 109, .6);
+    inset 0 0 0 1000px rgba(67, 52, 109, 0.6);
   border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.card .imbBx, .imbBx img{
-  width: 100%;
+.card .imbBx,
+.imbBx img {
+  width: auto;
   height: 100%;
 }
 
-.card .content{
+.card .content {
   position: absolute;
   bottom: -160px;
   width: 100%;
@@ -363,12 +361,12 @@ ul li:hover ~ .cursor {
   transition-delay: 0.65s;
 }
 
-.card:hover .content{
+.card:hover .content {
   bottom: 0;
   transition-delay: 0s;
 }
 
-.content .contentBx h3{
+.content .contentBx h3 {
   text-transform: uppercase;
   color: #fff;
   letter-spacing: 2px;
@@ -378,43 +376,43 @@ ul li:hover ~ .cursor {
   margin: 20px 0 15px;
   line-height: 1.1em;
   transition: 0.5s;
-  transition-delay: 0.6s;
+  transition-delay: 0.3s;
   opacity: 0;
   transform: translateY(-20px);
 }
 
-.card:hover .content .contentBx h3{
+.card:hover .content .contentBx h3 {
   opacity: 1;
   transform: translateY(0);
 }
 
-.content .contentBx h3 span{
+.content .contentBx h3 span {
   font-size: 12px;
   font-weight: 300;
   text-transform: initial;
 }
 
-.content .sci{
+.content .sci {
   position: relative;
   bottom: 10px;
   display: flex;
 }
 
-.content .sci li{
+.content .sci li {
   list-style: none;
   margin: 0 10px;
   transform: translateY(40px);
-  transition: 0.5s;
+  transition: 0.3s;
   opacity: 0;
   transition-delay: calc(0.2s * var(--i));
 }
 
-.card:hover .content .sci li{
+.card:hover .content .sci li {
   transform: translateY(0);
   opacity: 1;
 }
 
-.content .sci li a{
+.content .sci li a {
   color: #fff;
   font-size: 24px;
 }
