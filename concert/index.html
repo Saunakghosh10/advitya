@@ -9,17 +9,23 @@
   </head>
   <body>
     <!-- stripe testing ------------------------------ -->
-   
-   
+
     <button>
-
-        <a href="https://buy.stripe.com/fZeaFY8tk2sK7o4000" >checkout</a>
+      <a href="https://buy.stripe.com/cN215obFw3wO0ZGdQS">checkout</a>
     </button>
-  
-    
   </body>
-</html>
+  <script>
+        const stripe = require('stripe')('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');
 
+    const paymentMethodDomain = await stripe.paymentMethodDomains.create(
+      {
+        domain_name: 'advitya.vercel.app',
+      },
+      {
+        stripeAccount: '{{Advitya}}',
+      }
+    );
+  </script>
 </html>
 
 <!-- https://buy.stripe.com/test_eVa5kZ6Q3dly9MI5kk -->
