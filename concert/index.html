@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Concert</title>
     <script src="https://js.stripe.com/v3"></script>
+
+    <script
+      async
+      src="https://pay.google.com/gp/p/js/pay.js"
+      onload="onGooglePayLoaded()"
+    ></script>
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -13,19 +20,219 @@
     <button>
       <a href="https://buy.stripe.com/cN215obFw3wO0ZGdQS">checkout</a>
     </button>
-  </body>
-  <script>
-        const stripe = require('stripe')('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');
+  <!-- Other HTML code -->
 
-    const paymentMethodDomain = await stripe.paymentMethodDomains.create(
-      {
-        domain_name: 'advitya.vercel.app',
-      },
-      {
-        stripeAccount: '{{Advitya}}',
-      }
-    );
-  </script>
+<!-- <div id="container"></div>
+<form id="payment-form">
+  <div id="card-element"></div>
+  <button type="submit">Pay</button>
+</form> -->
+<!-- Other HTML code -->
+
+
+   <script>
+    
+//     var stripe = Stripe(
+//       "pk_live_51NqheHSE1wyod7qCEY2CllwFER3eKrm5OOgoB9dyIkt70SXb2K1sgDmGkcIo4jltFwlsvSskzz4vejI9rUdQg9SY00L15aTuKh"
+//     ); // Replace with your Stripe public key
+
+//     function getGooglePaymentsClient() {
+//       return new google.payments.api.PaymentsClient({ environment: "TEST" });
+//     }
+
+//     function onGooglePayLoaded() {
+//       var paymentsClient = getGooglePaymentsClient();
+
+//       var paymentDataRequest = {
+//         apiVersion: 2,
+//         apiVersionMinor: 0,
+//         merchantInfo: {
+//           merchantName: "Saunak Ghosh",
+//         },
+//         allowedPaymentMethods: [
+//           {
+//             type: "CARD",
+//             parameters: {
+//               allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
+//               allowedCardNetworks: ["VISA", "MASTERCARD"],
+//             },
+//             tokenizationSpecification: {
+//               type: "PAYMENT_GATEWAY",
+//               parameters: {
+//                 gateway: "stripe",
+//                 "stripe:version": "2019-03-14",
+//                 "stripe:publishableKey":
+//                   "pk_live_51NqheHSE1wyod7qCEY2CllwFER3eKrm5OOgoB9dyIkt70SXb2K1sgDmGkcIo4jltFwlsvSskzz4vejI9rUdQg9SY00L15aTuKh", // Replace with your Stripe public key
+//               },
+//             },
+//           },
+//         ],
+//         transactionInfo: {
+//           totalPriceStatus: "FINAL",
+//           totalPrice: "2",
+//           currencyCode: "INR",
+//         },
+//       };
+
+//       var button = paymentsClient.createButton({
+//         onClick: onGooglePayButtonClicked,
+//       });
+//       document.getElementById("container").appendChild(button);
+
+//       function onGooglePayButtonClicked() {
+//         paymentsClient
+//           .loadPaymentData(paymentDataRequest)
+//           .then(function (paymentData) {
+//             return stripe.createToken({
+//               type: "card",
+//               card: {
+//                 token: paymentData.paymentMethodData.tokenizationData.token,
+//               },
+//             });
+//           })
+//           .then(function (result) {
+//             if (result.error) {
+//               console.error("Failed to create token:", result.error);
+//             } else {
+//               console.log("Created token:", result.token.id);
+//               // Send the token to your server for charging
+//             }
+//           })
+//           .catch(function (err) {
+//             console.error("Failed to load payment data:", err);
+//           });
+//       }
+//     }
+//     var buttonOptions = {
+//   onClick: onGooglePayButtonClicked,
+//   buttonColor: 'default',
+//   buttonSizeMode: 'fill',
+//   buttonType: 'long'
+// };
+
+// var button = paymentsClient.createButton(buttonOptions);
+// document.getElementById('container').appendChild(button);
+
+// fetch('/charge', { // Replace '/charge' with your actual charge endpoint
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json'
+//   },
+//   body: JSON.stringify({
+//     stripeToken: result.token.id
+//   })
+// })
+// .then(function(response) {
+//   return response.json();
+// })
+// .then(function(data) {
+//   if (data.success) {
+//     console.log('Payment was successful');
+//     // You can update the UI to reflect the successful payment here
+//   } else {
+//     console.error('Payment failed:', data.message);
+//     // You can update the UI to reflect the failed payment here
+//   }
+// })
+// .catch(function(err) {
+//   console.error('Failed to send token to server:', err);
+//   // You can update the UI to reflect the error here
+// });
+// fetch('/charge', { // Replace '/charge' with your actual charge endpoint
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json'
+//   },
+//   body: JSON.stringify({
+//     stripeToken: result.token.id
+//   })
+// })
+// .then(function(response) {
+//   if (!response.ok) {
+//     throw new Error('Network response was not ok');
+//   }
+//   return response.json();
+// })
+// .then(function(data) {
+//   if (data.error) {
+//     console.error('Server validation failed:', data.error);
+//     // You can update the UI to reflect the server validation error here
+//   } else {
+//     console.log('Payment was successful');
+//     // You can update the UI to reflect the successful payment here
+//   }
+// })
+// .catch(function(err) {
+//   console.error('Failed to send token to server:', err);
+//   // You can update the UI to reflect the error here
+// });
+
+// var stripe = Stripe('pk_live_51NqheHSE1wyod7qCEY2CllwFER3eKrm5OOgoB9dyIkt70SXb2K1sgDmGkcIo4jltFwlsvSskzz4vejI9rUdQg9SY00L15aTuKh'); // Replace with your Stripe public key
+// var elements = stripe.elements();
+
+// var card = elements.create('card');
+// card.mount('#card-element');
+
+// document.querySelector('#payment-form').addEventListener('submit', function(e) {
+//   e.preventDefault();
+
+//   stripe.createPaymentMethod({
+//     type: 'card',
+//     card: card,
+//   }).then(function(result) {
+//     if (result.error) {
+//       console.error('Failed to create payment method:', result.error);
+//     } else {
+//       console.log('Created payment method:', result.paymentMethod.id);
+//       // Send the payment method to your server for charging
+//     }
+//   }).catch(function(err) {
+//     console.error('Failed to create payment method:', err);
+//   });
+// });
+// stripe.createPaymentMethod({
+//   type: 'card',
+//   card: card,
+// }).then(function(result) {
+//   if (result.error) {
+//     console.error('Failed to create payment method:', result.error);
+//   } else {
+//     fetch('/create-payment-method', { // Replace '/create-payment-method' with your actual endpoint
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify({
+//         paymentMethodId: result.paymentMethod.id
+//       })
+//     })
+//     .then(function(response) {
+//       if (!response.ok) {
+//         throw new Error('Network response was not ok');
+//       }
+//       return response.json();
+//     })
+//     .then(function(data) {
+//       if (data.error) {
+//         console.error('Server validation failed:', data.error);
+//         // You can update the UI to reflect the server validation error here
+//       } else {
+//         console.log('Payment method was created successfully');
+//         // You can update the UI to reflect the successful creation of the payment method here
+//       }
+//     })
+//     .catch(function(err) {
+//       console.error('Failed to send payment method to server:', err);
+//       // You can update the UI to reflect the error here
+//     });
+//   }
+// }).catch(function(err) {
+//   console.error('Failed to create payment method:', err);
+// });
+//   </script>
+
+
 </html>
+ 
 
 <!-- https://buy.stripe.com/test_eVa5kZ6Q3dly9MI5kk -->

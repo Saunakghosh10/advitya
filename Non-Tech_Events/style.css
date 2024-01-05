@@ -98,7 +98,7 @@ body {
 .headings {
   display: flex;
   justify-content: space-evenly;
-  gap: 2vw;
+  gap: 1vw;
   text-align: center;
   margin: 20px;
 }
@@ -115,7 +115,7 @@ body {
   /* flex-direction: column;/ */
   color: transparent;
   align-items: center;
-  font-size: 8vw;
+  font-size: 6vw;
   transition: all ease;
   outline: none;
   color: #000;
@@ -399,7 +399,7 @@ body {
   }
 
   .headings h1 {
-    font-size: 7vw;
+    font-size: 5vw;
   }
   .card-desc-p {
     text-align: center;
