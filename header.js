@@ -1,6 +1,32 @@
 // Function to initialize Locomotive Scroll for smooth scrolling
+
+const cursorDot = document.querySelector("[data-cursor-dot]");
+const cursorOutline = document.querySelector("[data-cursor-outline]");
+const Page3 = document.querySelector("#page3");
+
+window.addEventListener("mousemove", (e) => {
+  const posX = e.clientX;
+  const posY = e.clientY;
+
+  cursorDot.style.left = `${posX}px`;
+  cursorDot.style.top = `${posY}px`;
+
+  cursorOutline.style.left = `${posX}px`;
+  cursorOutline.style.top = `${posY}px`;
+
+  cursorOutline.animate(
+    {
+      left: `${posX}px`,
+      top: `${posY}px`,
+    },
+    { duration: 500, fill: "forwards" }
+  );
+});
+
+
 function locoscroll() {
   gsap.registerPlugin(ScrollTrigger);
+}
 
   const locoScroll = new LocomotiveScroll({
     el: document.querySelector("#mainh"),
@@ -29,41 +55,39 @@ function locoscroll() {
   });
 
   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-  ScrollTrigger.refresh();
-}
+    ScrollTrigger.refresh();
 
-// Initialize Locomotive Scroll
-locoscroll();
+  // Initialize Locomotive Scroll
+  locoscroll();
 
 // Function for custom cursor effect
-function cursoreffect() {
-  var page1Content = document.querySelector("#page1-content");
-  var cursor1 = document.querySelector("#cursor1");
+// function cursoreffect() {
+//   var page1Content = document.querySelector("#page1-content");
+//   var cursor1 = document.querySelector("#cursor1");
 
-  page1Content.addEventListener("mousemove", function (dets) {
-    gsap.to(cursor1, {
-      x: dets.x,
-      y: dets.y,
-    });
-  });
+//   page1Content.addEventListener("mousemove", function (dets) {
+//     gsap.to(cursor1, {
+//       x: dets.x,
+//       y: dets.y,
+//     });
+//   });
 
-  page1Content.addEventListener("mousemove", function (dets) {
-    gsap.to(cursor1, {
-      scale: 1,
-      opacity: 1,
-    });
-  });
+//   page1Content.addEventListener("mousemove", function (dets) {
+//     gsap.to(cursor1, {
+//       scale: 1,
+//       opacity: 1,
+//     });
+//   });
 
-  page1Content.addEventListener("mouseleave", function (dets) {
-    gsap.to(cursor1, {
-      scale: 0,
-      opacity: 0,
-    });
-  });
-}
+//   page1Content.addEventListener("mouseleave", function (dets) {
+//     gsap.to(cursor1, {
+//       scale: 0,
+//       opacity: 0,
+//     });
+//   });
+// }
 
-// Apply custom cursor effect
-cursoreffect();
+// cursoreffect();
 
 // Function for animations on page 2
 function page2Animation() {

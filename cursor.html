@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            /* To prevent default margin/padding and ensure full screen */
+        }
+
+        .white-bg,
+        .black-bg {
+            width: 50%;
+            height: 100vh;
+            float: left;
+            position: relative;
+        }
+
+        .white-bg {
+            background-color: white;
+        }
+
+        .black-bg {
+            background-color: black;
+        }
+
+        .cursor {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            border: 2px solid #000;
+            /* Initial cursor color */
+            border-radius: 50%;
+            pointer-events: none;
+            /* Ensure cursor doesn't interfere with mouse events on underlying elements */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="white-bg">
+        <div class="cursor"></div>
+    </div>
+    <div class="black-bg">
+        <div class="cursor"></div>
+    </div>
+    <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+
+    <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+    <script>
+        const whiteBg = document.querySelector('.white-bg');
+        const blackBg = document.querySelector('.black-bg');
+        const whiteCursor = whiteBg.querySelector('.cursor');
+        const blackCursor = blackBg.querySelector('.cursor');
+
+        const cursorTimeline = gsap.timeline({ paused: true });
+
+        // Define animations
+        cursorTimeline.to(whiteCursor, { borderColor: 'white' })
+            .to(blackCursor, { borderColor: 'black' }, 0);
+
+        // Hover effects
+        whiteBg.addEventListener('mouseenter', () => cursorTimeline.play());
+        whiteBg.addEventListener('mouseleave', () => cursorTimeline.reverse());
+
+        blackBg.addEventListener('mouseenter', () => cursorTimeline.play());
+        blackBg.addEventListener('mouseleave', () => cursorTimeline.reverse());
+    </script>
+</body>
+
+</html>
