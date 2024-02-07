@@ -183,6 +183,8 @@ body {
   margin-block: 15px;
   text-align: center;
   width: 100%;
+  display: flex;
+  gap: 1rem;
 }
 
 .reg-btn:hover {
