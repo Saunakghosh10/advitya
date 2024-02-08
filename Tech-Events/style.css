@@ -577,7 +577,11 @@ ul{
   list-style: none;
 }
 
+<<<<<<< HEAD
 /* footer */
+=======
+/* newfooter */
+>>>>>>> 7ece728877319ce72c664b8aa793d1e2d7bc1822
 
 .mainx {
   display: flex;
@@ -617,7 +621,11 @@ footer .menu li {
 
 footer .social_icon li a {
   font-size: 2em;
+<<<<<<< HEAD
   color: #fff;
+=======
+  color: #000000;
+>>>>>>> 7ece728877319ce72c664b8aa793d1e2d7bc1822
   margin: 0 10px;
   display: inline-block;
   transition: 0.5s;

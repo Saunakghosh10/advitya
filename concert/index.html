@@ -1,238 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Concert</title>
-    <script src="https://js.stripe.com/v3"></script>
 
-    <script
-      async
-      src="https://pay.google.com/gp/p/js/pay.js"
-      onload="onGooglePayLoaded()"
-    ></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>concert</title>
+  <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+  <!-- Recommended -->
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- stripe testing ------------------------------ -->
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <button>
-      <a href="https://buy.stripe.com/cN215obFw3wO0ZGdQS">checkout</a>
-    </button>
-  <!-- Other HTML code -->
+<body>
+  <div id="main">
+    <div id="back">
+      <img src="david-chang/IMG_7564.JPG" alt="" />
+      <img src="david-chang/IMG_7566.JPG" alt="" />
+    </div>
+    <div id="top">
+      <div id="workingarea">
+        <div id="nav">
+          <div id="nleft">
+            <img src="david-chang/Title.png" alt="" />
+            <a href="index.html">Home</a>
+            <a href="#">About</a>
+          </div>
+          <!-- <div id="nright"><a href="#">luxe</a><a href="#">something</a></div> -->
+        </div>
+        <div id="hero">
+          <div id="heroleft">
+            <div class="elem">
+              <h1>mohit chauhan</h1>
+              <h1>shirley setia</h1>
+            </div>
+            <div class="elem">
+              <h1>gives</h1>
+              <h1>will sing</h1>
+            </div>
+            <div class="elem">
+              <h1>zero funks</h1>
+              <h1>song</h1>
+            </div>
+            <button onclick="window.location.href='https://buy.stripe.com/cN215obFw3wO0ZGdQS';">
+              BUY PASS
+            </button>
+          </div>
+          <!-- <div id="heroright">
+              <p>Lorem ipsum dolor sit amet.</p>
+              <div id="imagediv"></div>
 
-<!-- <div id="container"></div>
-<form id="payment-form">
-  <div id="card-element"></div>
-  <button type="submit">Pay</button>
-</form> -->
-<!-- Other HTML code -->
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime
+                quos quaerat ut nihil veniam necessitatibus repellat ab dolorum,
+                minus perferendis?
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Asperiores ipsam dicta ad consequatur optio earum veritatis
+                suscipit, blanditiis repellat error?
+              </p>
+            </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
+  <!-- Scroll Trigger is needed for Scroll Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-   <script>
-    
-//     var stripe = Stripe(
-//       "pk_live_51NqheHSE1wyod7qCEY2CllwFER3eKrm5OOgoB9dyIkt70SXb2K1sgDmGkcIo4jltFwlsvSskzz4vejI9rUdQg9SY00L15aTuKh"
-//     ); // Replace with your Stripe public key
+  <!-- Three.js is needed for 3d Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
 
-//     function getGooglePaymentsClient() {
-//       return new google.payments.api.PaymentsClient({ environment: "TEST" });
-//     }
-
-//     function onGooglePayLoaded() {
-//       var paymentsClient = getGooglePaymentsClient();
-
-//       var paymentDataRequest = {
-//         apiVersion: 2,
-//         apiVersionMinor: 0,
-//         merchantInfo: {
-//           merchantName: "Saunak Ghosh",
-//         },
-//         allowedPaymentMethods: [
-//           {
-//             type: "CARD",
-//             parameters: {
-//               allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
-//               allowedCardNetworks: ["VISA", "MASTERCARD"],
-//             },
-//             tokenizationSpecification: {
-//               type: "PAYMENT_GATEWAY",
-//               parameters: {
-//                 gateway: "stripe",
-//                 "stripe:version": "2019-03-14",
-//                 "stripe:publishableKey":
-//                   "pk_live_51NqheHSE1wyod7qCEY2CllwFER3eKrm5OOgoB9dyIkt70SXb2K1sgDmGkcIo4jltFwlsvSskzz4vejI9rUdQg9SY00L15aTuKh", // Replace with your Stripe public key
-//               },
-//             },
-//           },
-//         ],
-//         transactionInfo: {
-//           totalPriceStatus: "FINAL",
-//           totalPrice: "2",
-//           currencyCode: "INR",
-//         },
-//       };
-
-//       var button = paymentsClient.createButton({
-//         onClick: onGooglePayButtonClicked,
-//       });
-//       document.getElementById("container").appendChild(button);
-
-//       function onGooglePayButtonClicked() {
-//         paymentsClient
-//           .loadPaymentData(paymentDataRequest)
-//           .then(function (paymentData) {
-//             return stripe.createToken({
-//               type: "card",
-//               card: {
-//                 token: paymentData.paymentMethodData.tokenizationData.token,
-//               },
-//             });
-//           })
-//           .then(function (result) {
-//             if (result.error) {
-//               console.error("Failed to create token:", result.error);
-//             } else {
-//               console.log("Created token:", result.token.id);
-//               // Send the token to your server for charging
-//             }
-//           })
-//           .catch(function (err) {
-//             console.error("Failed to load payment data:", err);
-//           });
-//       }
-//     }
-//     var buttonOptions = {
-//   onClick: onGooglePayButtonClicked,
-//   buttonColor: 'default',
-//   buttonSizeMode: 'fill',
-//   buttonType: 'long'
-// };
-
-// var button = paymentsClient.createButton(buttonOptions);
-// document.getElementById('container').appendChild(button);
-
-// fetch('/charge', { // Replace '/charge' with your actual charge endpoint
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json'
-//   },
-//   body: JSON.stringify({
-//     stripeToken: result.token.id
-//   })
-// })
-// .then(function(response) {
-//   return response.json();
-// })
-// .then(function(data) {
-//   if (data.success) {
-//     console.log('Payment was successful');
-//     // You can update the UI to reflect the successful payment here
-//   } else {
-//     console.error('Payment failed:', data.message);
-//     // You can update the UI to reflect the failed payment here
-//   }
-// })
-// .catch(function(err) {
-//   console.error('Failed to send token to server:', err);
-//   // You can update the UI to reflect the error here
-// });
-// fetch('/charge', { // Replace '/charge' with your actual charge endpoint
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json'
-//   },
-//   body: JSON.stringify({
-//     stripeToken: result.token.id
-//   })
-// })
-// .then(function(response) {
-//   if (!response.ok) {
-//     throw new Error('Network response was not ok');
-//   }
-//   return response.json();
-// })
-// .then(function(data) {
-//   if (data.error) {
-//     console.error('Server validation failed:', data.error);
-//     // You can update the UI to reflect the server validation error here
-//   } else {
-//     console.log('Payment was successful');
-//     // You can update the UI to reflect the successful payment here
-//   }
-// })
-// .catch(function(err) {
-//   console.error('Failed to send token to server:', err);
-//   // You can update the UI to reflect the error here
-// });
-
-// var stripe = Stripe('pk_live_51NqheHSE1wyod7qCEY2CllwFER3eKrm5OOgoB9dyIkt70SXb2K1sgDmGkcIo4jltFwlsvSskzz4vejI9rUdQg9SY00L15aTuKh'); // Replace with your Stripe public key
-// var elements = stripe.elements();
-
-// var card = elements.create('card');
-// card.mount('#card-element');
-
-// document.querySelector('#payment-form').addEventListener('submit', function(e) {
-//   e.preventDefault();
-
-//   stripe.createPaymentMethod({
-//     type: 'card',
-//     card: card,
-//   }).then(function(result) {
-//     if (result.error) {
-//       console.error('Failed to create payment method:', result.error);
-//     } else {
-//       console.log('Created payment method:', result.paymentMethod.id);
-//       // Send the payment method to your server for charging
-//     }
-//   }).catch(function(err) {
-//     console.error('Failed to create payment method:', err);
-//   });
-// });
-// stripe.createPaymentMethod({
-//   type: 'card',
-//   card: card,
-// }).then(function(result) {
-//   if (result.error) {
-//     console.error('Failed to create payment method:', result.error);
-//   } else {
-//     fetch('/create-payment-method', { // Replace '/create-payment-method' with your actual endpoint
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify({
-//         paymentMethodId: result.paymentMethod.id
-//       })
-//     })
-//     .then(function(response) {
-//       if (!response.ok) {
-//         throw new Error('Network response was not ok');
-//       }
-//       return response.json();
-//     })
-//     .then(function(data) {
-//       if (data.error) {
-//         console.error('Server validation failed:', data.error);
-//         // You can update the UI to reflect the server validation error here
-//       } else {
-//         console.log('Payment method was created successfully');
-//         // You can update the UI to reflect the successful creation of the payment method here
-//       }
-//     })
-//     .catch(function(err) {
-//       console.error('Failed to send payment method to server:', err);
-//       // You can update the UI to reflect the error here
-//     });
-//   }
-// }).catch(function(err) {
-//   console.error('Failed to create payment method:', err);
-// });
-//   </script>
-
+  <!-- ControlKit is needed for Debug Panel -->
+  <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+  <script src="script.js"></script>
+  <!-- Recommended -->
+</body>
 
 </html>
- 
-
-<!-- https://buy.stripe.com/test_eVa5kZ6Q3dly9MI5kk -->
