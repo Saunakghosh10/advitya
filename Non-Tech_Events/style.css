@@ -168,7 +168,12 @@ body {
   cursor: pointer;
   text-decoration: none;
   color: white;
-  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background: linear-gradient(
+    87.4deg,
+    rgb(251, 213, 0) 1.9%,
+    rgb(200, 125, 76) 49.7%,
+    rgb(42, 29, 29) 100.5%
+  );
   background-size: 400%;
   font-size: 18px;
   text-transform: uppercase;
@@ -254,7 +259,7 @@ body {
 
 .card-heading h1 {
   font-size: 2rem;
-  opacity: .85;
+  opacity: 0.85;
 }
 
 .card-header-right {
@@ -516,6 +521,6 @@ body {
   }
 }
 
-ul{
+ul {
   list-style: none;
 }
