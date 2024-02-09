@@ -20,6 +20,7 @@
 
   <!-- <link rel="stylesheet" href="gallery.css"> -->
 </head>
+
 <body>
   <div id="loader">
     <h3>AdVITya 2024</h3>
@@ -221,20 +222,23 @@
       <div class="flex flex-wrap justify-center gap-5 mb-10 relative overflow-hidden">
         <!-- First row -->
         <div class="w-full flex justify-center">
-          <div class="border-white border-2 w-64"><img alt="Dr. G. Viswanathan" loading="lazy" width="256" height="256"
-              decoding="async" data-nimg="1" class="w-full aspect-square object-cover" style="color:transparent"
+          <div class="border-white border-2 w-64">
+            <img alt="Dr. G. Viswanathan" loading="lazy" width="256" height="256" decoding="async" data-nimg="1"
+              class="w-full aspect-square object-cover" style="color:transparent"
               srcset="images/chancellor.jpg 1x, images/chancellor.jpg 2x" src="images/chancellor.jpg">
             <div
               class="bg-black text-white py-1 px-2 break-words font-spacemono font-bold text-center border-white border-y-2">
-              Dr. G. Viswanathan</div>
+              Dr. G. Viswanathan
+            </div>
             <div
               class="bg-yellow-300 text-black py-1 font-spacemono font-bold break-words text-sm text-center items-center">
               Chancellor
             </div>
           </div>
         </div>
+
         <!-- Second row -->
-        <div class="w-full flex flex-col justify-center items-center sm:flex-row gap-5">
+        <div class="flex flex-col justify-center sm:flex-row justify-center gap-5">
           <div class="border-white border-2 w-64">
             <img alt="Mr. Sankar Viswanathan" loading="lazy" width="256" height="256" decoding="async" data-nimg="1"
               class="w-full aspect-square object-cover" style="color:transparent"
@@ -249,7 +253,7 @@
             </div>
           </div>
           <div class="border-white border-2 w-64">
-            <img alt="Mr. Sankar Viswanathan" loading="lazy" width="256" height="256" decoding="async" data-nimg="1"
+            <img alt="Ms. Kadhambari Viswanathan" loading="lazy" width="256" height="256" decoding="async" data-nimg="1"
               class="w-full aspect-square object-cover" style="color:transparent"
               srcset="images/avp-1.jpg 1x, images/avp-1.jpg 2x" src="images/avp-1.jpg">
             <div
@@ -261,8 +265,12 @@
               Assistant Vice President
             </div>
           </div>
+        </div>
+
+        <!-- Third row -->
+        <div class="w-full flex flex-col sm:flex-row justify-center items-center gap-5 relative overflow-hidden">
           <div class="border-white border-2 w-64">
-            <img alt="Mr. Sankar Viswanathan" loading="lazy" width="256" height="256" decoding="async" data-nimg="1"
+            <img alt="Dr. Senthil Kumar Arumugam" loading="lazy" width="256" height="256" decoding="async" data-nimg="1"
               class="w-full aspect-square object-cover" style="color:transparent"
               srcset="images/Pro-VC-Sir_C-251x300.jpg 1x, images/Pro-VC-Sir_C-251x300.jpg 2x"
               src="images/Pro-VC-Sir_C-251x300.jpg">
@@ -276,10 +284,10 @@
             </div>
           </div>
           <div class="border-white border-2 w-64">
-            <img alt="Mr. Sankar Viswanathan" loading="lazy" width="256" height="256" decoding="async" data-nimg="1"
+            <img alt="Dr. Debashis Adhikari" loading="lazy" width="256" height="256" decoding="async" data-nimg="1"
               class="w-full aspect-square object-cover" style="color:transparent"
-              srcset="team/team-images/Dr.-Debashis-Adhikari_C.jpg 1x, team/team-images/Dr.-Debashis-Adhikari_C.jpg 2x"
-              src="team/team-images/Dr.-Debashis-Adhikari_C.jpg">
+              srcset="images/Dr.-Debashis-Adhikari_C.jpg 1x, images/Dr.-Debashis-Adhikari_C.jpg 2x"
+              src="images/Dr.-Debashis-Adhikari_C.jpg">
             <div
               class="bg-black text-white py-1 px-2 break-words font-spacemono font-bold text-center border-white border-y-2">
               Dr. Debashis Adhikari
@@ -289,8 +297,8 @@
               Registrar (I/c)
             </div>
           </div>
-
         </div>
+
 
       </div>
 
@@ -320,12 +328,12 @@
         <div class="content clearfix">
           <div class="field field-name-body field-type-text-with-summary field-label-hidden">
             <div class="field-items">
-              <div class="field-item even">
+              <div class="  field-item even">
                 <br>
                 <hr />
                 <p style="font-size: 30px; font-family: spacemono;">Sports Fest</p>
                 <p>&nbsp;</p>
-                <div class="flex flex-wrap gap-5 mb-10 relative overflow-hidden">
+                <div class=" sports flex flex-wrap gap-5 mb-5 relative overflow-hidden items-center">
                   <div class="border-white border-2 w-64">
                     <img alt="" loading="lazy" width="256" height="256" decoding="async" data-nimg="1"
                       class="w-full aspect-square object-cover" style="color:transparent"
@@ -361,37 +369,40 @@
                 </table>
                 <hr />
                 <p style="font-size: 30px; font-family: spacemono;">Techno - Cultural Fest</p>
-                <p>&nbsp;</p>
+                <!-- <p>&nbsp;</p> -->
                 <div class="flex flex-wrap gap-5 mb-10 relative overflow-hidden">
-                  <div class="border-white border-2 w-64">
-                    <img alt="" loading="lazy" width="256" height="256" decoding="async" data-nimg="1"
-                      class="w-full aspect-square object-cover" style="color:transparent"
-                      srcset="images\date reveal.png 1x, images\date reveal.png" src="images\date reveal.png">
-                    <div
-                      class="bg-black text-white py-1 px-2 break-words font-spacemono font-bold text-center border-white border-y-2">
-                      Date Announcement
+                  <div id="page3-elements" class="row-gap-2 gap-5" style="justify-content: flex-start;">
+                    <div class="border-white border-2 max-w-64 box mt-0 max-h-64">
+                      <a href="https://www.instagram.com/p/C2XNBKFPGey/">
+                        <img alt="" loading="lazy" width="256" height="256" decoding="async" data-nimg="1"
+                          class="w-full aspect-square object-cover cursor-pointer" style="color:transparent"
+                          srcset="images\abc reveal1.png 1x, images\abc reveal1.png" src="images/kabircafe reveal2.png">
+                        <video autoplay loop muted src="/videos/insta video 2.mp4"></video>
+                      </a>
+
                     </div>
-                  </div>
-                  <div class="border-white border-2 w-64">
-                    <img alt="" loading="lazy" width="256" height="256" decoding="async" data-nimg="1"
-                      class="w-full aspect-square object-cover" style="color:transparent"
-                      srcset="images\kabircafe reveal2.png 1x, images\kabircafe reveal2.png"
-                      src="images\kabircafe reveal2.png">
-                    <div
-                      class="bg-black text-white py-1 px-2 break-words font-spacemono font-bold text-center border-white border-y-2">
-                      Perfomance 1
+                    <div class="border-white border-2 max-w-64 box mt-0 max-h-64">
+                      <a href="https://www.instagram.com/p/C2zeh2moMJS/">
+                        <img alt="" loading="lazy" width="256" height="256" decoding="async" data-nimg="1"
+                          class="w-full aspect-square object-cover cursor-pointer" style="color:transparent"
+                          srcset="images\abc reveal1.png 1x, images\abc reveal1.png" src="images/abc reveal1.png">
+                        <video autoplay loop muted src="/videos/insta video1.mp4"></video>
+                      </a>
+
                     </div>
-                  </div>
-                  <div class="border-white border-2 w-64">
-                    <img alt="" loading="lazy" width="256" height="256" decoding="async" data-nimg="1"
-                      class="w-full aspect-square object-cover" style="color:transparent"
-                      srcset="images\abc reveal1.png 1x, images\abc reveal1.png" src="images\abc reveal1.png">
-                    <div
-                      class="bg-black text-white py-1 px-2 break-words font-spacemono font-bold text-center border-white border-y-2">
-                      Perfomance 2
+                    
+                    <div class="border-white border-2 max-w-64 box mt-0 max-h-64">
+                      <a href="https://www.instagram.com/p/C245sC8PIjP/">
+                        <img alt="" loading="lazy" width="256" height="256" decoding="async" data-nimg="1"
+                          class="w-full aspect-square object-cover cursor-pointer" style="color:transparent"
+                          srcset="images\abc reveal1.png 1x, images\abc reveal1.png" src="images/celebguess (1).png">
+                        <video autoplay loop muted src="/videos/insta video 3.mp4"></video>
+                      </a>
+
                     </div>
+
+
                   </div>
-                  
                 </div>
                 <a href="https://youtu.be/mFk9eCZ9bpo?si=rn0wKbGoU48YQhqd"
                   style="color: #EABD5B; font-size: 15px; text-decoration: none; margin: 10px;" target="_blank">
@@ -433,20 +444,20 @@
 
       </div>
       <div id="page3-elements">
-        <div class="box">
+        <div class="box h-[75vh]">
           <a href="Tech-Events/index.html">
             <img src="images/tech.png" alt="" />
             <video autoplay loop muted src="videos/tech.mp4"></video>
           </a>
         </div>
 
-        <div class="box">
+        <div class="box h-[75vh]">
           <a href="Non-Tech_Events/index.html">
             <img src="images/non tech.png" alt="" />
             <video autoplay loop muted src="videos/non tech.mp4"></video>
           </a>
         </div>
-        <div class="box">
+        <div class="box h-[75vh]">
           <a href="">
             <img src="images/pro show.png" alt="" />
             <video autoplay loop muted src="videos/proshow.mp4"></video>
@@ -572,12 +583,13 @@
             <li><a href="https://in.linkedin.com/company/vit-bhopal-university"><i class="fa-brands fa-linkedin"></i>
               </a></li>
 
-            <li><a href="https://www.instagram.com/vit.bhopal/?hl=en"><i class="fa-brands fa-instagram"></i>
+            <li><a href="https://www.instagram.com/advitya.vitb"><i class="fa-brands fa-instagram"></i>
               </a></li>
             <li><a href="https://www.youtube.com/c/vitbhopalofficial"><i class="fa-brands fa-youtube"></i>
               </a></li>
           </ul>
         </div>
+
         <ul class="menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="#">About</a></li>
@@ -585,6 +597,10 @@
           <!-- <li><a href="#">Services</a></li> -->
           <li><a href="#">Team</a></li>
         </ul>
+        <div class="convenor">
+          <p>Convenor: <br>
+            Dr. Yogesh Shukla, advitya.convenor@gmail.com</p>
+        </div>
         <p>VIT Bhopal | All right reserved</p>
       </footer>
     </div>
