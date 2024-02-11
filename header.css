@@ -129,6 +129,14 @@ nav h4 {
   nav h4 img {
     display: none;
   }
+
+  .sports{
+    justify-content: center;
+  }
+
+  .content p {
+    text-align: center;
+  }
 }
 @media only screen and (max-width: 600px) {
   nav h3 img {
@@ -193,17 +201,19 @@ nav h4 {
 }
 
 #page3-elements {
-  height: 75vh;
+  /* height: 75vh; */
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   /* background-color: #ff5f38; */
-  margin-top: 5vw;
+  margin-top: 2vw;
+  /* gap: 20px; */
 }
 
 #page3-elements .box {
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   margin-bottom: 20px;
   /* background-color: blue; */
@@ -685,3 +695,5 @@ footer .wave#wave1 {
 .zoom li a:hover {
   transform: scale(1.1);
 }
+
+
