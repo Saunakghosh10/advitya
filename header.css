@@ -700,11 +700,14 @@ footer .wave#wave1 {
 /* sponsors --------------- */
 
 .container{
-  padding-top: 150px;
+  padding-top: 10px;
+  /* align-items: center; */
 }
 h2{
   text-align: center;
   padding: 20px;
+  font-size: 4vw;
+
   
 }
 .slick-slide{
@@ -739,6 +742,7 @@ h2{
 }
 .slick-slide img{
   display: block;
+  align-items: center;
 }
 .slick-initialized .slick-slide{
   display: block;
