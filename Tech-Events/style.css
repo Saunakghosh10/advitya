@@ -34,7 +34,7 @@ body {
   width: 100%;
   color: black;
   background: url("../images/bg\ \(2\).jpg");
-  cursor: none;
+  /* cursor: none; */
 }
 
 /* .cursor-dot {
