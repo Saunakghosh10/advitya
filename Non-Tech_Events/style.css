@@ -46,6 +46,18 @@ body {
   /* filter: blur(9px); */
 }
 
+.container2 {
+  width: 100%;
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+  row-gap: 10px;
+  margin-bottom: 2vw;
+  justify-content: flex-end;  
+  align-items: flex-end;
+  padding-right: 2vw;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -91,7 +103,8 @@ body {
 
 .home-main {
   width: 100%;
-  padding: 10vw 10vw;
+  padding: 5vw 10vw;
+  padding-top: 10vw;
   font-weight: 200;
 }
 
@@ -100,7 +113,7 @@ body {
   justify-content: space-evenly;
   gap: 1vw;
   text-align: center;
-  margin: 20px;
+  /* margin: 20px; */
 }
 
 .headings {
