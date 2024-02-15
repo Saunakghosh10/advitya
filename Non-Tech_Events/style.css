@@ -472,6 +472,14 @@ body {
   .card-info {
     text-align: center;
   }
+
+  .sponsor{
+    font-size: 12px !important;
+  }
+
+  .container2 img{
+    width: 75px !important;
+  }
 }
 
 @media (max-width: 1390px) {
