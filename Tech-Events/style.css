@@ -204,6 +204,14 @@ nav h4 {
   nav h4 img {
     display: none;
   }
+
+  .sponsor{
+    font-size: 8px !important;
+  }
+
+  .container2 img{
+    width: 50px !important;
+  }
 }
 @media only screen and (max-width: 600px) {
   nav h3 img {
