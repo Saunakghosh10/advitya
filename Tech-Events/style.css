@@ -34,10 +34,10 @@ body {
   width: 100%;
   color: black;
   background: url("../images/bg\ \(2\).jpg");
-  cursor: none;
+  cursor:default;
 }
 
-.cursor-dot {
+/* .cursor-dot {
   width: 15px;
   height: 15px;
   background-color: rgba(11, 10, 1, 0.83);
@@ -57,7 +57,7 @@ body {
   z-index: 1;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 
 .main {
@@ -115,8 +115,9 @@ body {
 
 .home-main {
   width: 100%;
-  padding: 10vw 10vw;
+  padding: 5vw 10vw;
   font-weight: 200;
+  padding-top: 10vw;
 }
 
 .headings {
@@ -124,7 +125,7 @@ body {
   justify-content: space-evenly;
   gap: 1vw;
   text-align: center;
-  margin: 20px;
+  /* margin: 20px; */
 }
 
 .headings {
@@ -168,6 +169,18 @@ body {
   width: 100%;
 }
 
+.container2 {
+  width: 100%;
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+  row-gap: 10px;
+  margin-bottom: 2vw;
+  justify-content: flex-end;  
+  align-items: flex-end;
+  padding-right: 2vw;
+}
+
 nav {
   /* height: 100px; */
   width: 100%;
@@ -190,6 +203,14 @@ nav h4 {
 @media only screen and (max-width: 600px) {
   nav h4 img {
     display: none;
+  }
+
+  .sponsor{
+    font-size: 8px !important;
+  }
+
+  .container2 img{
+    width: 50px !important;
   }
 }
 @media only screen and (max-width: 600px) {

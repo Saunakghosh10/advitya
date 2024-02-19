@@ -702,6 +702,11 @@ footer .wave#wave1 {
   padding-top: 10px;
   /* align-items: center; */
 }
+
+.container h2{
+  font-family: nb !important;
+}
+
 h2 {
   text-align: center;
   padding: 20px;
